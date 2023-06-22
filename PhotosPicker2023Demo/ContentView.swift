@@ -63,24 +63,11 @@ struct ContentView: View {
                     .imageScale(.large)
             }
 
-            // The next three view modifiers were added in iOS 17.
-
             // This embeds the PhotosPicker in this app instead of
             // rendering it in a sheet controlled by a separate process.
             .photosPickerStyle(.inline)
 
-            // This hides the the "Clear" button (deselects all)
-            // and the "Done" button (closes picker when not inline.
-            // It seems there is no need to disable any of these
-            // if the navigation bar and toolbar are hidden (see below).
-            // .photosPickerDisabledCapabilities(.selectionActions)
-
-            // This hides the PhotosPicker navigation bar and toolbar.
-            // The navigation bar contains the Clear and Done buttons
-            // and a segmented Picker to select "Photos" or "Albums".
-            // The toolbar contains the "Options" button and some text.
-            // When the first argument is `.hidden`,
-            // the `edges` argument specifies the edges to hide.
+            // This hides all controls normally rendered by the PhotosPicker.
             .photosPickerAccessoryVisibility(.hidden, edges: .all)
 
             // .ignoresSafeArea()
