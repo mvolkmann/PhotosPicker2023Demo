@@ -54,10 +54,18 @@ struct ContentView: View {
             Text("Tap photos to select them.").fontWeight(.bold)
             PhotosPicker(
                 selection: $imageSelections,
-                selectionBehavior: .continuous,
-                matching: .images,
-                preferredItemEncoding: .current,
-                photoLibrary: .shared()
+
+                // Places checkmarks in blue circles on each selected image.
+                selectionBehavior: .continuous, // value added in iOS 17
+
+                // Places numbered blue circles on each selected image.
+                // selectionBehavior: .continuousAndOrdered, // value added in iOS 17
+
+                // matching: .images,
+
+                preferredItemEncoding: .current
+
+                // photoLibrary: .shared()
             ) {
                 Image(systemName: "photo")
                     .imageScale(.large)
