@@ -55,11 +55,10 @@ struct ContentView: View {
             PhotosPicker(
                 selection: $imageSelections,
 
-                // Places checkmarks in blue circles on each selected image.
+                // This causes the selection binding to update
+                // after each selection is made, rather than
+                // waiting for a "Done" button to be tapped.
                 selectionBehavior: .continuous, // value added in iOS 17
-
-                // Places numbered blue circles on each selected image.
-                // selectionBehavior: .continuousAndOrdered, // value added in iOS 17
 
                 // matching: .images,
 
@@ -79,7 +78,8 @@ struct ContentView: View {
             .photosPickerAccessoryVisibility(.hidden, edges: .all)
 
             // .ignoresSafeArea()
-            // The height of each row is 120.
+
+            // In the `.inline` style, the height of each row is 120.
             .frame(height: 240) // two rows
 
             if !images.isEmpty {
